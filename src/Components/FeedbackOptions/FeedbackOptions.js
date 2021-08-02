@@ -2,38 +2,22 @@ import PropTypes from 'prop-types'
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) =>
 {
-    const { good, neutral, bad } = options;
+    
     return (
     
-    <div>
-            <button
+        <div>
+            {options.map(mark => {
+                return (
+                     <button
                 type="button"
                 onClick={onLeaveFeedback}
-                name="good"
-                data-value={good}
+                name={mark}
             >
-                Good
+                {mark}
             </button>
-
-            <button
-                
-                type="button"
-                onClick={onLeaveFeedback}
-                name="neutral"
-                data-value={neutral}
-            >
-                Neutral
-            </button>
-
-            <button
-                
-                type="button"
-                onClick={onLeaveFeedback}
-                name="bad"
-                data-value={bad}
-            >
-                Bad
-            </button>
+                )
+            })}
+           
     </div>
     )
 }

@@ -36,10 +36,10 @@ class Feedback extends Component{
   
     render() {
         const positive = this.state.good / this.state.total * 100;
-        
+        const arrayMarks = ['good', 'neutral','bad'];
         return <div className="btn-field">
-            <Section title={"Please leave feedback"}>
-            <FeedbackOptions options={this.state} onLeaveFeedback={this.onLeaveFeedback}></FeedbackOptions>
+            <Section title="Please leave feedback">
+            <FeedbackOptions options={arrayMarks } onLeaveFeedback={this.onLeaveFeedback}></FeedbackOptions>
             
             {this.state.visibility &&
                 <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={this.state.total} positivePercentage={positive} />
